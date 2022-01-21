@@ -1,60 +1,15 @@
-import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import React from "react";
+import { Query } from "react-apollo";
 
-import { ReactComponent as Logo } from "../../assets/logo.svg";
-import { ReactComponent as CartIcon } from "../../assets/cart.svg";
-import { ReactComponent as DownArrow } from "../../assets/down-arrow.svg";
-import CartDropdown from "../cart-dropdown";
+import Header from "./header";
 
-import { Container } from "./styles.js";
+// GraphQL Operations
+import { GET_CART_HIDDEN } from "../../graphql/queries";
 
-const navigations = [
-  { name: "women", to: "/" },
-  { name: "men", to: "/product" },
-  { name: "kids", to: "/kids" },
-];
+const HeaderContainer = () => (
+  <Query query={GET_CART_HIDDEN}>
+    {({ data }) => <Header isCartHidden={data.isCartHidden} />}
+  </Query>
+);
 
-class Header extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isCartToggled: false,
-    };
-  }
-
-  render() {
-    const { currentUser, isCartHidden, clearCartItems } = this.props;
-    return (
-      <Container>
-        <div className="left-section">
-          {navigations.map(({ name, to }) => {
-            return (
-              <NavLink
-                exact
-                to={to}
-                className="option"
-                activeClassName="active"
-              >
-                <p>{name}</p>
-              </NavLink>
-            );
-          })}
-        </div>
-        <Logo className="logo" />
-        <div className="right-section">
-          <div className="currency">
-            $ <DownArrow className="arrow" />
-          </div>
-          <CartIcon
-            onClick={() =>
-              this.setState({ isCartToggled: !this.state.isCartToggled })
-            }
-          />
-          {this.state.isCartToggled && <CartDropdown />}
-        </div>
-      </Container>
-    );
-  }
-}
-
-export default Header;
+export default HeaderContainer;

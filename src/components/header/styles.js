@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { COLORS } from "../../constants/colors";
 
 export const Container = styled.div`
   height: 80px;
@@ -39,11 +40,15 @@ export const Container = styled.div`
       align-items: center;
       border-bottom: 2px solid transparent;
       text-transform: uppercase;
+
+      &:hover {
+        color: ${COLORS.green};
+      }
     }
 
     .active {
-      border-bottom: 2px solid red;
-      color: red;
+      border-bottom: 2px solid ${COLORS.green};
+      color: ${COLORS.green};
     }
   }
 

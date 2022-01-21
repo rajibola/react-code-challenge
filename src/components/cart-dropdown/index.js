@@ -13,17 +13,17 @@ class CartDropdown extends Component {
 
 export default CartDropdown;
 
-const data = [
-  {
-    name: "Apollo Running Short",
-    price: "50.00",
-    type: "s",
-    rate: 1,
-  },
-  {
-    name: "Jupiter Wayfarer",
-    price: "70.00",
-    type: "s",
-    rate: 2,
-  },
-];
+// const data = [
+//   {
+//     name: "Apollo Running Short",
+//     price: "50.00",
+//     type: "s",
+//     rate: 1,
+//   },
+//   {
+//     name: "Jupiter Wayfarer",
+//     price: "70.00",
+//     type: "s",
+//     rate: 2,
+//   },
+// ];
