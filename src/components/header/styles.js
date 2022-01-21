@@ -7,11 +7,20 @@ export const Container = styled.div`
   justify-content: space-between;
   margin-bottom: 25px;
   padding: 0 101px;
-  border-bottom: 1px solid;
+
   align-items: center;
 
   .right-section {
     justify-content: flex-end;
+
+    div > .arrow {
+      margin-left: 10px;
+    }
+
+    .currency {
+      margin-right: 22px;
+      cursor: pointer;
+    }
   }
 
   .left-section,

@@ -1,8 +1,13 @@
 import { Component } from "react";
+import { Container } from "./styles";
 
 class Home extends Component {
   render() {
-    return <h1>HOME SCREEN</h1>;
+    return (
+      <Container>
+        <h2>Category name</h2>
+      </Container>
+    );
   }
 }
 
