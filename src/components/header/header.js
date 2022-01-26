@@ -9,9 +9,9 @@ import { Container } from "./styles.js";
 import CartIcon from "../cart-icon";
 
 const navigations = [
-  { name: "women", to: "/" },
-  { name: "men", to: "/product" },
-  { name: "kids", to: "/kids" },
+  { name: "all", to: "/" },
+  { name: "clothes", to: "/clothes" },
+  { name: "tech", to: "/tech" },
 ];
 
 class Header extends Component {
@@ -24,10 +24,6 @@ class Header extends Component {
 
   render() {
     const { isCartHidden } = this.props;
-    console.log(
-      "🚀 ~ file: index.js ~ line 27 ~ Header ~ render ~ isCartHidden",
-      isCartHidden
-    );
 
     return (
       <Container>

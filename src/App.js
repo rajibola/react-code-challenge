@@ -2,7 +2,7 @@ import { Route, Switch } from "react-router-dom";
 import "./App.css";
 import Header from "./components/header";
 import Home from "./pages/home";
-import Product from "./pages/product";
+import CollectionPage from "./pages/collection";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Header />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/product" component={Product} />
+        <Route path="/:collectionId" component={CollectionPage} />
       </Switch>
     </div>
   );
