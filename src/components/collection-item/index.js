@@ -4,17 +4,18 @@ import { ReactComponent as CartIcon } from "../../assets/cart.svg";
 
 export default class CollectionItem extends Component {
   render() {
-    const { data } = this.props;
-    const price = data.prices.find((item) => item.currency.symbol === "$");
-    console.log({ price });
+    const { inStock, prices, gallery, name } = this.props.data;
+    const price = prices.find((item) => item.currency.symbol === "$");
+
     return (
-      <CardStyle>
-        <img src={data.gallery?.[0]} className="image" alt="product" />
+      <CardStyle inStock={inStock}>
+        <img src={gallery?.[0]} className="image" alt="product" />
         <div className="cart-icon">
           <CartIcon className="icon" fill="#fff" />
         </div>
-        <p className="name">{data.name}</p>
+        <p className="name">{name}</p>
         <h5 className="amount">${price.amount}</h5>
+        {!inStock && <div className="out-of-stock">OUT OF STOCK</div>}
       </CardStyle>
     );
   }

@@ -9,11 +9,12 @@ export const CardStyle = styled.div`
   position: relative;
 
   &:hover {
-    box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
+    ${({ inStock }) =>
+      inStock && `box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);`}
   }
 
   &:hover > .cart-icon {
-    visibility: visible;
+    ${({ inStock }) => inStock && `visibility: visible;`}
     opacity: 1;
   }
 
@@ -37,6 +38,21 @@ export const CardStyle = styled.div`
     /* font-weight: 500; */
   }
 
+  .out-of-stock {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: auto;
+    padding-top: 167px;
+    text-align: center;
+    color: #8d8f9a;
+    font-size: 24px;
+    line-height: 160%;
+  }
+
   .cart-icon {
     width: 52px;
     height: 52px;
@@ -54,13 +70,8 @@ export const CardStyle = styled.div`
     .icon {
       position: absolute;
       left: 0;
-
-      /* make the top edge of .inner appear in the vertical center of .outer */
       top: 50%;
-
-      /* move .inner up by half of its height so that its middle is in the middle of .outer */
       transform: translateY(-50%);
-
       height: 20px;
       width: 100%;
       color: white;

@@ -19,6 +19,8 @@ export const GET_COLLECTIONS = gql`
         id
         name
         brand
+        gallery
+        inStock
         prices {
           amount
           currency {
@@ -26,8 +28,6 @@ export const GET_COLLECTIONS = gql`
             label
           }
         }
-        gallery
-        inStock
       }
     }
   }
