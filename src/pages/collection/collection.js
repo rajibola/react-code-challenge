@@ -1,18 +1,22 @@
 import React from "react";
+import CollectionItem from "../../components/collection-item";
+import { withRouter } from "react-router-dom";
+import { Container } from "./styles";
 
-const Collection = ({ collection }) => {
-  const { title, items } = collection;
+const Collection = ({ collection, match }) => {
+  // const { title, items } = collection;
+  const title = match.params.collectionId;
+
   return (
-    <div className="collection-page">
+    <Container>
       <h2 className="title">{title}</h2>
-      <div className="items">
+      <div className="products-container">
         {collection.map((item) => (
-          //   <CollectionItem key={item.id} item={item} />
-          <div>SHOW ITEMS {item.name}</div>
+          <CollectionItem data={item} key={item.id} />
         ))}
       </div>
-    </div>
+    </Container>
   );
 };
 
-export default Collection;
+export default withRouter(Collection);

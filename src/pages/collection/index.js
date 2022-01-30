@@ -11,9 +11,10 @@ const CollectionPageContainer = ({ match }) => {
   return (
     <Query
       query={GET_COLLECTION_BY_CATEGORY}
-      variables={{ title: match.params.collectionId }}
+      variables={{ title: match?.params?.collectionId || "all" }}
     >
       {({ data, loading, error }) => {
+        console.log({ match });
         if (loading) return <div>SPINNER</div>;
         if (error) return <h2>Error: {error.message}</h2>;
 

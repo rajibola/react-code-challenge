@@ -9,7 +9,7 @@ import { Container } from "./styles.js";
 import CartIcon from "../cart-icon";
 
 const navigations = [
-  { name: "all", to: "/" },
+  { name: "all", to: "/all" },
   { name: "clothes", to: "/clothes" },
   { name: "tech", to: "/tech" },
 ];
