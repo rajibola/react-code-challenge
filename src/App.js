@@ -2,6 +2,7 @@ import { Redirect, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Header from "./components/header";
 import CollectionPage from "./pages/collection";
+import Details from "./pages/details";
 
 function App() {
   return (
@@ -9,7 +10,8 @@ function App() {
       <Header />
       <Switch>
         <Route exact path="/" render={() => <Redirect to="/all" />} />
-        <Route path="/:collectionId" component={CollectionPage} />
+        <Route exact path="/:collectionId" component={CollectionPage} />
+        <Route path="/:collectionId/:productId" component={Details} />
       </Switch>
     </div>
   );

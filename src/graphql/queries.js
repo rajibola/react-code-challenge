@@ -41,6 +41,7 @@ export const GET_COLLECTION_BY_CATEGORY = gql`
         id
         name
         brand
+        category
         prices {
           amount
           currency {
@@ -51,6 +52,26 @@ export const GET_COLLECTION_BY_CATEGORY = gql`
         gallery
         inStock
       }
+    }
+  }
+`;
+
+// TYPE: Query, FIELD: getCollectionsByCategory, VARIABLES: id:String
+export const GET_PRODUCT_BY_ID = gql`
+  query GetProductById($id: String!) {
+    product(id: $id) {
+      id
+      name
+      brand
+      category
+      prices {
+        amount
+        currency {
+          symbol
+          label
+        }
+      }
+      gallery
     }
   }
 `;
