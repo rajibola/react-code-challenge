@@ -23,9 +23,16 @@ code {
 }
 
 @font-face {
-  font-family: "Roboto";
-  src: local("Roboto"),
+  font-family: "Roboto-Condensed";
+  src: local("Roboto-Condensed"),
     url("./assets/fonts/Roboto/RobotoCondensed-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "SourceSansPro";
+  src: local("SourceSansPro"),
+    url("./assets/fonts/SourceSansPro/SourceSansPro-Regular.ttf")
+      format("truetype");
 }
 
 a {

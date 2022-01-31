@@ -1,24 +1,60 @@
 import { Component } from "react";
-import { Container, Swatch } from "./styles";
+import { Swatch, Button } from "../../styles";
+import { filterPrice } from "../../utils/helpers";
+import { Container } from "./styles";
 
 export class Details extends Component {
   constructor(props) {
     super(props);
-    this.state = { currentImage: this.props.product.gallery?.[0] };
+    this.state = {
+      currentImage: this.props.product.gallery?.[0],
+      currency: "$",
+    };
   }
 
-  // renderProductView() {
-  //   return (
-  //     <div className="swatch-section">
-  //       <p className="brand">{brand}</p>
-  //       <p className="name">{name}</p>
-  //     </div>
-  //   );
-  // }
+  renderSwatchSection = () => {
+    const { brand, name, attributes, prices, description } = this.props.product;
+    return (
+      <div className="swatch-section">
+        <div className="brand">{brand}</div>
+        <div className="name">{name}</div>
+        {attributes.map((attribute) => {
+          const { name, items, type } = attribute;
+          const isSwatch = type === "swatch";
+          return (
+            <>
+              <div className="attribute-name">{name}:</div>
+              <div className="attribute">
+                {items.map(({ value }) => {
+                  return (
+                    <Swatch value={value} isSwatch={isSwatch}>
+                      {!isSwatch && value}
+                    </Swatch>
+                  );
+                })}
+              </div>
+            </>
+          );
+        })}
+        <div className="price-tag">Price:</div>
+        <div className="price">{filterPrice(prices, this.state.currency)}</div>
+
+        <Button>ADD TO CART</Button>
+
+        <div
+          className="description"
+          dangerouslySetInnerHTML={{
+            __html: description.replace(/\n/g, "<br />"),
+          }}
+        />
+      </div>
+    );
+  };
 
   render() {
     const { currentImage } = this.state;
-    const { gallery, brand, name, attributes } = this.props.product;
+    const { gallery } = this.props.product;
+
     return (
       <Container>
         <div className="type-section">
@@ -35,33 +71,9 @@ export class Details extends Component {
           })}
         </div>
         <div>
-          {currentImage ? (
-            <img src={currentImage} className="product-view" />
-          ) : (
-            <h2>Error Image</h2>
-          )}
+          <img src={currentImage} className="product-view" alt={currentImage} />
         </div>
-        <div className="swatch-section">
-          <div className="brand">{brand}</div>
-          <div className="name">{name}</div>
-          {attributes.map((attribute) => {
-            const { name, items, type } = attribute;
-            return (
-              <>
-                <div className="attribute-name">{name}:</div>
-                <div className="attribute">
-                  {items.map(({ value }) => {
-                    return (
-                      <Swatch value={value} isSwatch={type === "swatch"}>
-                        {!(type === "swatch") && value}
-                      </Swatch>
-                    );
-                  })}
-                </div>
-              </>
-            );
-          })}
-        </div>
+        {this.renderSwatchSection()}
       </Container>
     );
   }

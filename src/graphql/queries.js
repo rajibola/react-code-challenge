@@ -78,6 +78,7 @@ export const GET_PRODUCT_BY_ID = gql`
           value
         }
       }
+      description
       gallery
     }
   }

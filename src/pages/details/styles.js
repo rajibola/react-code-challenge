@@ -35,17 +35,44 @@ export const Container = styled(globalContainer)`
       font-size: 30px;
       font-weight: 600;
       margin-bottom: 16px;
+      line-height: 27px;
     }
     .name {
       font-size: 30px;
+      line-height: 27px;
       margin-bottom: 40px;
     }
 
     .attribute-name {
       margin-bottom: 10px;
-      font-family: Roboto;
+      font-family: Roboto-Condensed;
       font-size: 18px;
       font-weight: 700;
+      text-transform: uppercase;
+      line-height: 18px;
+    }
+
+    .price-tag {
+      margin-top: 40px;
+      font-family: Roboto-Condensed;
+      font-size: 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 18px;
+    }
+
+    .price {
+      font-family: Raleway;
+      font-size: 24px;
+      font-weight: 700;
+      margin: 10px 0 42px 0;
+    }
+
+    .description {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      line-height: 159.96%;
+      margin-top: 40px;
     }
 
     .attribute {
@@ -55,15 +82,4 @@ export const Container = styled(globalContainer)`
       margin-bottom: 20px;
     }
   }
-`;
-
-export const Swatch = styled.div`
-  width: 63px;
-  height: 45px;
-  background-color: ${({ isSwatch, value }) => isSwatch && value};
-  border: 1px solid #1d1f22;
-
-  justify-content: center;
-  align-items: center;
-  display: flex;
 `;
