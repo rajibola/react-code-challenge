@@ -71,6 +71,13 @@ export const GET_PRODUCT_BY_ID = gql`
           label
         }
       }
+      attributes {
+        type
+        name
+        items {
+          value
+        }
+      }
       gallery
     }
   }

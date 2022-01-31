@@ -22,6 +22,12 @@ code {
     url("./assets/fonts/Raleway/Raleway-Regular.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto"),
+    url("./assets/fonts/Roboto/RobotoCondensed-Regular.ttf") format("truetype");
+}
+
 a {
   text-decoration: none;
   color: black;

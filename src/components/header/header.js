@@ -30,12 +30,7 @@ class Header extends Component {
         <div className="left-section">
           {navigations.map(({ name, to }) => {
             return (
-              <NavLink
-                exact
-                to={to}
-                className="option"
-                activeClassName="active"
-              >
+              <NavLink to={to} className="option" activeClassName="active">
                 <p>{name}</p>
               </NavLink>
             );

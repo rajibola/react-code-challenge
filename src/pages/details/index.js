@@ -13,7 +13,6 @@ export default class DetailsContainer extends Component {
         variables={{ id: match?.params?.productId }}
       >
         {({ data, loading, error }) => {
-          console.log({ data });
           if (loading) return <div>SPINNER</div>;
           if (error) return <h2>Error: {error.message}</h2>;
 
