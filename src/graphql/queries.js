@@ -1,13 +1,5 @@
 import { gql } from "apollo-boost";
 
-// --- Cart Related Queries ---
-// isCartHidden
-export const GET_CART_HIDDEN = gql`
-  query {
-    isCartHidden @client
-  }
-`;
-
 // ----- Server-side Queries -----
 // --- Collection Related Queries ---
 // TYPE: Query, FIELD: collections
@@ -81,5 +73,20 @@ export const GET_PRODUCT_BY_ID = gql`
       description
       gallery
     }
+  }
+`;
+
+// --- Cart Related Queries ---
+// isCartHidden
+export const GET_CART_HIDDEN = gql`
+  query {
+    isCartHidden @client
+  }
+`;
+
+// cartItems
+export const GET_CART_ITEMS = gql`
+  query {
+    cartItems @client
   }
 `;
