@@ -9,11 +9,25 @@ export const Swatch = styled.div`
   width: 63px;
   height: 45px;
   background-color: ${({ isSwatch, value }) => isSwatch && value};
-  border: ${({ isSwatch }) => !isSwatch && "1px solid #1d1f22;"};
+  border: ${({ isSwatch, isSelected }) =>
+    isSwatch ? isSelected && "1px solid #1d1f22;" : "1px solid #1d1f22;"};
 
   justify-content: center;
   align-items: center;
   display: flex;
+  font-family: SourceSansPro;
+  ${({ isSelected, isSwatch }) =>
+    !isSwatch && isSelected && "background-color: #1D1F22; color: white"};
+
+  cursor: pointer;
+
+  &:hover {
+    ${({ isSelected, isSwatch }) =>
+      !isSwatch &&
+      !isSelected &&
+      `color: #a6a6a6;border-color: #a6a6a6;
+    `}
+  }
 `;
 
 export const Button = styled.div`

@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Query } from "react-apollo";
+import { Query, Mutation } from "react-apollo";
 // GraphQL Operations
 import { GET_PRODUCT_BY_ID } from "../../graphql/queries";
 import { ADD_ITEM_TO_CART } from "../../graphql/mutations";
