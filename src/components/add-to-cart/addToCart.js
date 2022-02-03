@@ -1,6 +1,6 @@
 import { Component } from "react";
 import { Button, Swatch } from "../../styles";
-import { filterPrice } from "../../utils/helpers";
+import { filterPrice, normarlize } from "../../utils/helpers";
 import { Container } from "./styles";
 
 export default class AddToCart extends Component {
@@ -8,7 +8,7 @@ export default class AddToCart extends Component {
     super(props);
     this.state = {
       currency: "$",
-      cartItem: null,
+      variants: null,
     };
   }
 
@@ -18,24 +18,27 @@ export default class AddToCart extends Component {
     if (attributes.length) {
       attributes.map(({ name, items }) => (myObject[name] = items[0].value));
     }
-    this.setState({ cartItem: myObject });
+    this.setState({ variants: myObject });
   }
 
   selectAttribute = (name, value) => {
-    const newState = this.state.cartItem;
+    const newState = this.state.variants;
     newState[name] = value;
-    this.setState({ cartItem: newState });
+    this.setState({ variants: newState });
+  };
+
+  addItemtoCart = () => {
+    const selectedItem = normarlize(this.props, this.state);
+    return this.props.addItem(selectedItem);
   };
 
   render() {
-    console.log(this.state?.cartItem);
     const { brand, name, attributes, prices, description } = this.props.item;
     return (
       <Container>
         <div className="brand">{brand}</div>
         <div className="name">{name}</div>
         {attributes.map((attribute, i) => {
-          console.log({ attribute });
           const { name, items, type } = attribute;
           const isSwatch = type === "swatch";
           return (
@@ -43,7 +46,7 @@ export default class AddToCart extends Component {
               <div className="attribute-name">{name}:</div>
               <div className="attribute">
                 {items.map(({ value }, idx) => {
-                  const isSelected = this.state?.cartItem?.[name] === value;
+                  const isSelected = this.state?.variants?.[name] === value;
                   return (
                     <Swatch
                       value={value}
@@ -63,7 +66,7 @@ export default class AddToCart extends Component {
         <div className="price-tag">Price:</div>
         <div className="price">{filterPrice(prices, this.state.currency)}</div>
 
-        <Button>ADD TO CART</Button>
+        <Button onClick={() => this.addItemtoCart()}>ADD TO CART</Button>
 
         <div
           className="description"

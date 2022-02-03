@@ -10,6 +10,7 @@ export const typeDefs = gql`
   extend type Mutation {
     ToggleCartHidden: Boolean!
     AddItemToCart(item: Item!): [Item]!
+    ClearCartItems: [Item]!
   }
 `;
 
@@ -43,15 +44,17 @@ export const resolvers = {
     },
 
     addItemToCart: (_root, { item }, { cache }) => {
-      // Get cartItems from local cache
       const { cartItems } = cache.readQuery({ query: GET_CART_ITEMS });
-
-      // Add new item to cart => returns newCartItems array
+      console.log({ cartItems });
       const newCartItems = addItemToCart(cartItems, item);
 
       updateCartItemsRelatedQueries(cache, newCartItems);
 
       return newCartItems;
+    },
+
+    clearCartItems: (_root, _args, { cache }) => {
+      updateCartItemsRelatedQueries(cache, []);
     },
   },
 };

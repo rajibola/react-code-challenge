@@ -1,12 +1,20 @@
 import { Component } from "react";
+import { Query } from "react-apollo";
+import { GET_CART_ITEMS } from "../../graphql/queries";
 import { Container } from "./styles";
 
 class CartDropdown extends Component {
   render() {
     return (
-      <Container>
-        <h4>My Bag, 2 items</h4>
-      </Container>
+      <Query query={GET_CART_ITEMS}>
+        {({ data }) => {
+          return (
+            <Container>
+              <h4>My Bag, 2 items</h4>
+            </Container>
+          );
+        }}
+      </Query>
     );
   }
 }
