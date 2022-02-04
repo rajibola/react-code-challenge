@@ -21,6 +21,15 @@ export const Swatch = styled.div`
 
   cursor: pointer;
 
+  ${({ small }) =>
+    small &&
+    `   
+    width: auto;
+    min-width: 24px;
+    height: 24px;
+    font-size: 14px;
+  `}
+
   &:hover {
     ${({ isSelected, isSwatch }) =>
       !isSwatch &&

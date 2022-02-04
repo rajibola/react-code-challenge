@@ -1,37 +1,32 @@
+import flowRight from "lodash.flowright";
 import { Component } from "react";
-import { Query } from "react-apollo";
+import { graphql } from "react-apollo";
+import {
+  REMOVE_ITEM_FROM_CART,
+  ADD_ITEM_TO_CART,
+} from "../../graphql/mutations";
 import { GET_CART_ITEMS } from "../../graphql/queries";
-import { Container } from "./styles";
+import CartDropdown from "./cart-dropdown";
 
-class CartDropdown extends Component {
+class CartDropdownContainer extends Component {
   render() {
+    const {
+      data: { cartItems },
+      removeItemFromCart,
+      addItemToCart,
+    } = this.props;
     return (
-      <Query query={GET_CART_ITEMS}>
-        {({ data }) => {
-          return (
-            <Container>
-              <h4>My Bag, 2 items</h4>
-            </Container>
-          );
-        }}
-      </Query>
+      <CartDropdown
+        cartItems={cartItems}
+        removeItem={(item) => removeItemFromCart({ variables: { item } })}
+        addItem={(item) => addItemToCart({ variables: { item } })}
+      />
     );
   }
 }
 
-export default CartDropdown;
-
-// const data = [
-//   {
-//     name: "Apollo Running Short",
-//     price: "50.00",
-//     type: "s",
-//     rate: 1,
-//   },
-//   {
-//     name: "Jupiter Wayfarer",
-//     price: "70.00",
-//     type: "s",
-//     rate: 2,
-//   },
-// ];
+export default flowRight(
+  graphql(GET_CART_ITEMS),
+  graphql(REMOVE_ITEM_FROM_CART, { name: "removeItemFromCart" }),
+  graphql(ADD_ITEM_TO_CART, { name: "addItemToCart" })
+)(CartDropdownContainer);

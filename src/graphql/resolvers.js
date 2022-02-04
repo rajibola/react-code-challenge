@@ -58,7 +58,7 @@ export const resolvers = {
 
     addItemToCart: (_root, { item }, { cache }) => {
       const { cartItems } = cache.readQuery({ query: GET_CART_ITEMS });
-      console.log({ cartItems });
+
       const newCartItems = addItemToCart(cartItems, item);
 
       updateCartItemsRelatedQueries(cache, newCartItems);
