@@ -8,7 +8,7 @@ class CartIcon extends Component {
     return (
       <Container onClick={toggleCartHidden}>
         <Cart />
-        <div className="count">{itemCount || 2}</div>
+        <div className="count">{itemCount}</div>
       </Container>
     );
   }

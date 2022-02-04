@@ -1,6 +1,11 @@
 import { gql } from "apollo-boost";
-import { addItemToCart } from "./cart.utils";
-import { GET_CART_HIDDEN, GET_CART_ITEMS } from "./queries";
+import {
+  addItemToCart,
+  removeItemFromCart,
+  clearItemFromCart,
+  getCartItemCount,
+} from "./cart.utils";
+import { GET_CART_HIDDEN, GET_ITEM_COUNT, GET_CART_ITEMS } from "./queries";
 
 export const typeDefs = gql`
   extend type Item {
@@ -15,6 +20,14 @@ export const typeDefs = gql`
 `;
 
 const updateCartItemsRelatedQueries = (cache, newCartItems) => {
+  // Calculate & cache new itemCount
+  cache.writeQuery({
+    query: GET_ITEM_COUNT,
+    data: {
+      itemCount: getCartItemCount(newCartItems),
+    },
+  });
+
   // Update cartItems array in local cache => with newCartItems
   cache.writeQuery({
     query: GET_CART_ITEMS,
@@ -47,6 +60,30 @@ export const resolvers = {
       const { cartItems } = cache.readQuery({ query: GET_CART_ITEMS });
       console.log({ cartItems });
       const newCartItems = addItemToCart(cartItems, item);
+
+      updateCartItemsRelatedQueries(cache, newCartItems);
+
+      return newCartItems;
+    },
+
+    removeItemFromCart: (_root, { item }, { cache }) => {
+      // Get cartItems from local cache
+      const { cartItems } = cache.readQuery({ query: GET_CART_ITEMS });
+
+      // Remove item from cart
+      const newCartItems = removeItemFromCart(cartItems, item);
+
+      updateCartItemsRelatedQueries(cache, newCartItems);
+
+      return newCartItems;
+    },
+
+    clearItemFromCart: (_root, { item }, { cache }) => {
+      // Get cartItems from local cache
+      const { cartItems } = cache.readQuery({ query: GET_CART_ITEMS });
+
+      // Remove item from cart
+      const newCartItems = clearItemFromCart(cartItems, item);
 
       updateCartItemsRelatedQueries(cache, newCartItems);
 

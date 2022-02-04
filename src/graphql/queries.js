@@ -90,3 +90,10 @@ export const GET_CART_ITEMS = gql`
     cartItems @client
   }
 `;
+
+// itemCount
+export const GET_ITEM_COUNT = gql`
+  query {
+    itemCount @client
+  }
+`;

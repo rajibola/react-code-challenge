@@ -19,3 +19,15 @@ export const CLEAR_CART_ITEMS = gql`
     clearCartItems @client
   }
 `;
+
+export const REMOVE_ITEM_FROM_CART = gql`
+  mutation RemoveItemFromCart($item: Item!) {
+    removeItemFromCart(item: $item) @client
+  }
+`;
+
+export const CLEAR_ITEM_FROM_CART = gql`
+  mutation ClearItemFromCart($item: Item!) {
+    clearItemFromCart(item: $item) @client
+  }
+`;
