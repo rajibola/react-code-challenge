@@ -1,6 +1,7 @@
 import { Redirect, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Header from "./components/header";
+import Modal from "./components/modal";
 import CollectionPage from "./pages/collection";
 import Details from "./pages/details";
 
@@ -13,6 +14,7 @@ function App() {
         <Route exact path="/:collectionId" component={CollectionPage} />
         <Route path="/:collectionId/:productId" component={Details} />
       </Switch>
+      <Modal />
     </div>
   );
 }

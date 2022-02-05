@@ -48,3 +48,13 @@ export const Button = styled.div`
   color: #fff;
   font-weight: 600;
 `;
+
+export const Modal = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: rgba(57, 55, 72, 0.22);
+  position: fixed;
+  top: 0;
+
+  ${({ isHidden }) => isHidden && "display: none;"}
+`;

@@ -8,6 +8,10 @@ export const Container = styled.div`
   justify-content: space-between;
   margin-bottom: 25px;
   padding: 0 101px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: white;
 
   align-items: center;
 

@@ -22,6 +22,7 @@ export const Container = styled.div`
     display: flex;
     justify-content: space-between;
     margin-bottom: 41px;
+    z-index: 100;
 
     .left-container {
       width: 136px;
@@ -47,6 +48,16 @@ export const Container = styled.div`
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+        margin-right: 10px;
+
+        .add,
+        .remove {
+          cursor: pointer;
+
+          &:hover {
+            opacity: 0.65;
+          }
+        }
       }
     }
   }
