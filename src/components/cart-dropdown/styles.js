@@ -43,6 +43,13 @@ export const Container = styled.div`
     .right-container {
       display: flex;
 
+      .image {
+        width: 105px;
+        height: 137px;
+        object-fit: contain;
+        object-position: center;
+      }
+
       .add-remove {
         display: flex;
         flex-direction: column;

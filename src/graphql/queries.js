@@ -76,6 +76,11 @@ export const GET_PRODUCT_BY_ID = gql`
   }
 `;
 
+export const GET_CURRENCY = gql`
+  query {
+    currency @client
+  }
+`;
 // --- Cart Related Queries ---
 // isCartHidden
 export const GET_CART_HIDDEN = gql`
@@ -95,5 +100,12 @@ export const GET_CART_ITEMS = gql`
 export const GET_ITEM_COUNT = gql`
   query {
     itemCount @client
+  }
+`;
+
+export const GET_ITEMS_CURRENCY = gql`
+  query {
+    cartItems @client
+    currency @client
   }
 `;

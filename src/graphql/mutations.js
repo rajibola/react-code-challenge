@@ -1,5 +1,11 @@
 import { gql } from "apollo-boost";
 
+export const SET_CURRENCY = gql`
+  mutation SetCurrency($currency: Currency!) {
+    setCurrency(currency: $currency) @client
+  }
+`;
+
 // --- Cart Related Mutations ---
 // Toggle isCartHidden (Boolean)
 export const TOGGLE_CART_HIDDEN = gql`

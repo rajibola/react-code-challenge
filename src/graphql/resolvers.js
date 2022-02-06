@@ -5,17 +5,27 @@ import {
   clearItemFromCart,
   getCartItemCount,
 } from "./cart.utils";
-import { GET_CART_HIDDEN, GET_ITEM_COUNT, GET_CART_ITEMS } from "./queries";
+import {
+  GET_CART_HIDDEN,
+  GET_ITEM_COUNT,
+  GET_CART_ITEMS,
+  GET_CURRENCY,
+} from "./queries";
 
 export const typeDefs = gql`
   extend type Item {
     quantity: Int
   }
 
+  extend type Currency {
+    currency: String!
+  }
+
   extend type Mutation {
     ToggleCartHidden: Boolean!
     AddItemToCart(item: Item!): [Item]!
     ClearCartItems: [Item]!
+    SetCurreny(currency: Currency!): Currency
   }
 `;
 
@@ -54,6 +64,18 @@ export const resolvers = {
       });
 
       return !isCartHidden;
+    },
+
+    setCurrency: (_root, { currency }, { cache }) => {
+      // Update currency local cache value
+      cache.writeQuery({
+        query: GET_CURRENCY,
+        data: {
+          currency,
+        },
+      });
+
+      return currency;
     },
 
     addItemToCart: (_root, { item }, { cache }) => {

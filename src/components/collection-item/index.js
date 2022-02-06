@@ -1,25 +1,21 @@
+import flowRight from "lodash.flowright";
 import React, { Component } from "react";
-import { CardStyle } from "./styles";
-import { ReactComponent as CartIcon } from "../../assets/cart.svg";
-import { Link } from "react-router-dom";
+import { GET_CURRENCY } from "../../graphql/queries";
+import CollectionItem from "./collection-item";
+import { graphql } from "react-apollo";
 
-export default class CollectionItem extends Component {
+class CollectionItemContainer extends Component {
   render() {
-    const { inStock, prices, gallery, name, category, id } = this.props.data;
-    const price = prices.find((item) => item.currency.symbol === "$");
-
+    console.log("DATA", this.props);
     return (
-      <Link to={category + "/" + id}>
-        <CardStyle inStock={inStock}>
-          <img src={gallery?.[0]} className="image" alt="product" />
-          <div className="cart-icon">
-            <CartIcon className="icon" fill="#fff" />
-          </div>
-          <p className="name">{name}</p>
-          <h5 className="amount">${price.amount}</h5>
-          {!inStock && <div className="out-of-stock">OUT OF STOCK</div>}
-        </CardStyle>
-      </Link>
+      <CollectionItem
+        data={this.props.data}
+        currency={this.props.currency.currency}
+      />
     );
   }
 }
+
+export default flowRight(graphql(GET_CURRENCY, { name: "currency" }))(
+  CollectionItemContainer
+);

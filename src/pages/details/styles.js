@@ -22,7 +22,7 @@ export const Container = styled(globalContainer)`
     height: 511px;
     border: 1px solid;
     margin-right: 100px;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
   }
 `;

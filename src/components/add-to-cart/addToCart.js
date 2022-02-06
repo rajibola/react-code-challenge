@@ -7,7 +7,6 @@ export default class AddToCart extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currency: "$",
       variants: null,
     };
   }
@@ -64,7 +63,7 @@ export default class AddToCart extends Component {
           );
         })}
         <div className="price-tag">Price:</div>
-        <div className="price">{filterPrice(prices, this.state.currency)}</div>
+        <div className="price">{filterPrice(prices, this.props.currency)}</div>
 
         <Button onClick={() => this.addItemtoCart()}>ADD TO CART</Button>
 

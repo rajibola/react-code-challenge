@@ -3,6 +3,7 @@ const INITIAL_DATA = {
   cartItems: [],
   cartTotal: 0,
   itemCount: 0,
+  currency: "$",
 };
 
 export default INITIAL_DATA;
