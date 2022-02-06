@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Container = styled.div`
   position: absolute;
   top: 80px;
-  border: 1px solid;
   width: 325px;
   background-color: white;
   padding: 8px 16px;
@@ -18,7 +17,6 @@ export const Container = styled.div`
   }
 
   .list-container {
-    border: solid 1px;
     display: flex;
     justify-content: space-between;
     margin-bottom: 41px;
@@ -35,7 +33,7 @@ export const Container = styled.div`
       }
 
       .price {
-        font-weight: 500;
+        font-weight: 600 !important;
         margin-bottom: 27px;
       }
     }

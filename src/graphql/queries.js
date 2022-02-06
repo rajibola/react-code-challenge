@@ -25,6 +25,23 @@ export const GET_COLLECTIONS = gql`
   }
 `;
 
+export const GET_CATEGORIES = gql`
+  query {
+    categories {
+      name
+    }
+  }
+`;
+
+export const GET_CURRENCIES = gql`
+  query {
+    currencies {
+      label
+      symbol
+    }
+  }
+`;
+
 // TYPE: Query, FIELD: getCollectionsByCategory, VARIABLES: title:String
 export const GET_COLLECTION_BY_CATEGORY = gql`
   query GetCollectionByCategory($title: String!) {

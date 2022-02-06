@@ -2,17 +2,11 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 
 import { ReactComponent as Logo } from "../../assets/logo.svg";
-import { ReactComponent as DownArrow } from "../../assets/down-arrow.svg";
 import CartDropdown from "../cart-dropdown";
 
 import { Container } from "./styles.js";
 import CartIcon from "../cart-icon";
-
-const navigations = [
-  { name: "all", to: "/all" },
-  { name: "clothes", to: "/clothes" },
-  { name: "tech", to: "/tech" },
-];
+import CurrencyDropdown from "../currency-dropdown";
 
 class Header extends Component {
   constructor(props) {
@@ -28,9 +22,13 @@ class Header extends Component {
     return (
       <Container>
         <div className="left-section">
-          {navigations.map(({ name, to }) => {
+          {this.props?.categories?.map(({ name }) => {
             return (
-              <NavLink to={to} className="option" activeClassName="active">
+              <NavLink
+                to={`/${name}`}
+                className="option"
+                activeClassName="active"
+              >
                 <p>{name}</p>
               </NavLink>
             );
@@ -38,9 +36,7 @@ class Header extends Component {
         </div>
         <Logo className="logo" />
         <div className="right-section">
-          <div className="currency">
-            $ <DownArrow className="arrow" />
-          </div>
+          <CurrencyDropdown />
           <CartIcon />
           {!isCartHidden && <CartDropdown />}
         </div>

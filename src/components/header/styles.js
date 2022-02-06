@@ -21,11 +21,6 @@ export const Container = styled.div`
     div > .arrow {
       margin-left: 10px;
     }
-
-    .currency {
-      margin-right: 22px;
-      cursor: pointer;
-    }
   }
 
   .left-section,

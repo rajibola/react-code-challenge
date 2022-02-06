@@ -6,7 +6,6 @@ import { graphql } from "react-apollo";
 
 class CollectionItemContainer extends Component {
   render() {
-    console.log("DATA", this.props);
     return (
       <CollectionItem
         data={this.props.data}

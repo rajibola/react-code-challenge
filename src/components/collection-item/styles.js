@@ -66,6 +66,7 @@ export const CardStyle = styled.div`
     transition: visibility 0s, opacity 0.2s linear;
     justify-content: center;
     align-items: center;
+    filter: drop-shadow(0px 4px 11px rgba(29, 31, 34, 0.1));
 
     .icon {
       position: absolute;
