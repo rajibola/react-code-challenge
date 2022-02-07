@@ -4,8 +4,8 @@ export const filterPrice = (prices, currency, isPrice) => {
   return currency + filtered?.amount;
 };
 
-export let normarlize = (props, variants) => {
-  let { prices, name, brand, gallery, id } = props.item;
+export let normarlize = (item, variants) => {
+  let { prices, name, brand, gallery, id } = item;
   let cartId = id + " " + JSON.stringify(variants);
 
   return {

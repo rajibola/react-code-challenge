@@ -27,7 +27,7 @@ export default class AddToCart extends Component {
   };
 
   addItemtoCart = () => {
-    let selectedItem = normarlize(this.props, this.state.variants);
+    let selectedItem = normarlize(this.props.item, this.state.variants);
     return this.props.addItem(selectedItem);
   };
 

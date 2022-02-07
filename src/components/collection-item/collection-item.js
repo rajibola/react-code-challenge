@@ -1,28 +1,41 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { ReactComponent as CartIcon } from "../../assets/cart.svg";
-import { filterPrice } from "../../utils/helpers";
+import { filterPrice, normarlize } from "../../utils/helpers";
 import { CardStyle } from "./styles";
 
 class CollectionItem extends Component {
+  addItemtoCart = () => {
+    const { attributes } = this.props.data;
+    const myObject = {};
+    if (attributes.length) {
+      attributes.map(({ name, items }) => (myObject[name] = items[0].value));
+    }
+    let selectedItem = normarlize(this.props.data, myObject);
+    return this.props.addItem(selectedItem);
+  };
+
   render() {
     const { inStock, prices, gallery, name, category, id } = this.props.data;
     const price = filterPrice(prices, this.props.currency);
 
     return (
-      <Link to={category + "/" + id}>
-        <CardStyle inStock={inStock}>
-          <img src={gallery?.[0]} className="image" alt="product" />
-          <div className="cart-icon">
-            <CartIcon className="icon" fill="#fff" />
-          </div>
-          <p className="name">{name}</p>
-          <h5 className="amount">{price}</h5>
-          {!inStock && <div className="out-of-stock">OUT OF STOCK</div>}
-        </CardStyle>
-      </Link>
+      // <Link to={category + "/" + id}>
+      <CardStyle
+        inStock={inStock}
+        onClick={() => this.props.history.push(category + "/" + id)}
+      >
+        <img src={gallery?.[0]} className="image" alt="product" />
+        <div className="cart-icon" onClick={() => this.addItemtoCart()}>
+          <CartIcon className="icon" fill="#fff" />
+        </div>
+        <p className="name">{name}</p>
+        <h5 className="amount">{price}</h5>
+        {!inStock && <div className="out-of-stock">OUT OF STOCK</div>}
+      </CardStyle>
+      // </Link>
     );
   }
 }
 
-export default CollectionItem;
+export default withRouter(CollectionItem);

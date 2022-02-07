@@ -51,6 +51,13 @@ export const GET_COLLECTION_BY_CATEGORY = gql`
         name
         brand
         category
+        attributes {
+          name
+          type
+          items {
+            value
+          }
+        }
         prices {
           amount
           currency {
