@@ -22,12 +22,13 @@ class Header extends Component {
     return (
       <Container>
         <div className="left-section">
-          {this.props?.categories?.map(({ name }) => {
+          {this.props?.categories?.map(({ name }, id) => {
             return (
               <NavLink
                 to={`/${name}`}
                 className="option"
                 activeClassName="active"
+                key={id}
               >
                 <p>{name}</p>
               </NavLink>

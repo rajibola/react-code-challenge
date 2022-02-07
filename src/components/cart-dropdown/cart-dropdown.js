@@ -3,7 +3,7 @@ import { Swatch } from "../../styles";
 import { Container } from "./styles";
 import { ReactComponent as Plus } from "../../assets/plus-square.svg";
 import { ReactComponent as Minus } from "../../assets/minus-square.svg";
-import { filterPrice } from "../../utils/helpers";
+import { filterPrice, getVariants } from "../../utils/helpers";
 
 export default class CartDropdown extends Component {
   wrapperRef = createRef();
@@ -30,8 +30,10 @@ export default class CartDropdown extends Component {
           My Bag<span>, {cartItems.length} items</span>
         </h4>
         {cartItems?.map((cartItem) => {
-          const { variants, brand, name, id, gallery, quantity, prices } =
-            cartItem;
+          const { brand, name, id, gallery, quantity, prices } = cartItem;
+          const variants = getVariants(id);
+          console.log({ variants });
+
           const computedPrice = filterPrice(prices, this.props.currency);
           return (
             <div key={id} className="list-container">

@@ -1,5 +1,4 @@
 import { Component, createRef } from "react";
-import { ReactComponent as DownArrow } from "../../assets/down-arrow.svg";
 import { Container, DropDown, StyledDropDown } from "./styles";
 
 class CurrencyDropdown extends Component {
@@ -39,9 +38,13 @@ class CurrencyDropdown extends Component {
           show={this.state.show}
           ref={this.wrapperRef}
         >
-          {data.map(({ label, symbol }) => {
+          {data?.map(({ label, symbol }, id) => {
             return (
-              <div className="list" onClick={() => this.changeSymbol(symbol)}>
+              <div
+                className="list"
+                onClick={() => this.changeSymbol(symbol)}
+                key={id}
+              >
                 {label} {symbol}
               </div>
             );

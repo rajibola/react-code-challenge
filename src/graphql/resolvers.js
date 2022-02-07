@@ -50,24 +50,31 @@ const updateCartItemsRelatedQueries = (cache, newCartItems) => {
 export const resolvers = {
   Mutation: {
     toggleCartHidden: (_root, _args, { cache }) => {
-      // Get isCartHidden value from local cache
-      const { isCartHidden } = cache.readQuery({
-        query: GET_CART_HIDDEN,
-      });
+      try {
+        const { isCartHidden } = cache.readQuery({
+          query: GET_CART_HIDDEN,
+        });
+        cache.writeQuery({
+          query: GET_CART_HIDDEN,
+          data: {
+            isCartHidden: !isCartHidden,
+          },
+        });
 
-      // Toggle isCartHidden value & write new value to cache
-      cache.writeQuery({
-        query: GET_CART_HIDDEN,
-        data: {
-          isCartHidden: !isCartHidden,
-        },
-      });
+        return !isCartHidden;
+      } catch {
+        cache.writeQuery({
+          query: GET_CART_HIDDEN,
+          data: {
+            isCartHidden: false,
+          },
+        });
 
-      return !isCartHidden;
+        return false;
+      }
     },
 
     setCurrency: (_root, { currency }, { cache }) => {
-      // Update currency local cache value
       cache.writeQuery({
         query: GET_CURRENCY,
         data: {
@@ -79,13 +86,16 @@ export const resolvers = {
     },
 
     addItemToCart: (_root, { item }, { cache }) => {
-      const { cartItems } = cache.readQuery({ query: GET_CART_ITEMS });
-
-      const newCartItems = addItemToCart(cartItems, item);
-
-      updateCartItemsRelatedQueries(cache, newCartItems);
-
-      return newCartItems;
+      try {
+        const { cartItems } = cache.readQuery({ query: GET_CART_ITEMS });
+        const newCartItems = addItemToCart(cartItems, item);
+        updateCartItemsRelatedQueries(cache, newCartItems);
+        return newCartItems;
+      } catch {
+        addItemToCart([], item);
+        updateCartItemsRelatedQueries(cache, [item]);
+        return [item];
+      }
     },
 
     removeItemFromCart: (_root, { item }, { cache }) => {

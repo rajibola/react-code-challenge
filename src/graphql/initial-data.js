@@ -1,4 +1,4 @@
-const INITIAL_DATA = {
+let INITIAL_DATA = {
   isCartHidden: true,
   cartItems: [],
   cartTotal: 0,

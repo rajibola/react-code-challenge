@@ -16,7 +16,7 @@ class CartIconContainer extends Component {
     return (
       <CartIcon
         toggleCartHidden={toggleCartHidden}
-        itemCount={cartItems.length}
+        itemCount={cartItems?.length}
       />
     );
   }

@@ -3,16 +3,18 @@ export const filterPrice = (prices, currency) => {
   return currency + filtered?.amount;
 };
 
-export let normarlize = (props, state) => {
-  const { prices, name, brand, gallery, id } = props.item;
-  const { variants } = state;
-  const cartId = id + Object.values(variants).join("");
+export let normarlize = (props, variants) => {
+  let { prices, name, brand, gallery, id } = props.item;
+  let cartId = id + " " + JSON.stringify(variants);
+
   return {
     prices,
-    variants,
     name,
     brand,
     gallery,
     id: cartId,
   };
 };
+
+export let getVariants = (id) =>
+  JSON.parse(id.split(" ").filter((_, idx) => idx)[0]);

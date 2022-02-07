@@ -37,6 +37,7 @@ const client = new ApolloClient({
 });
 
 // Set Initial Values for In-Memory Cache
+// client.clearStore();
 cache.writeData({
   data: INITIAL_DATA,
 });
