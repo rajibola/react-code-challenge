@@ -33,6 +33,7 @@ export default class AddToCart extends Component {
 
   render() {
     const { brand, name, attributes, prices, description } = this.props.item;
+    const price = filterPrice(prices, this.props.currency);
     return (
       <Container>
         <div className="brand">{brand}</div>
@@ -63,7 +64,7 @@ export default class AddToCart extends Component {
           );
         })}
         <div className="price-tag">Price:</div>
-        <div className="price">{filterPrice(prices, this.props.currency)}</div>
+        <div className="price">{price}</div>
 
         <Button onClick={() => this.addItemtoCart()}>ADD TO CART</Button>
 

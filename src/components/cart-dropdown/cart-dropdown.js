@@ -3,7 +3,7 @@ import { Swatch } from "../../styles";
 import { Container } from "./styles";
 import { ReactComponent as Plus } from "../../assets/plus-square.svg";
 import { ReactComponent as Minus } from "../../assets/minus-square.svg";
-import { filterPrice, getVariants } from "../../utils/helpers";
+import { filterPrice, getCartTotal, getVariants } from "../../utils/helpers";
 
 export default class CartDropdown extends Component {
   wrapperRef = createRef();
@@ -68,6 +68,8 @@ export default class CartDropdown extends Component {
             </div>
           );
         })}
+
+        <div>Total {getCartTotal(cartItems, this.props.currency)}</div>
       </Container>
     );
   }
