@@ -32,7 +32,6 @@ export default class CartDropdown extends Component {
         {cartItems?.map((cartItem) => {
           const { brand, name, id, gallery, quantity, prices } = cartItem;
           const variants = getVariants(id);
-          console.log({ variants });
 
           const computedPrice = filterPrice(prices, this.props.currency);
           return (
@@ -47,7 +46,7 @@ export default class CartDropdown extends Component {
                     const isSwatch = type === "Color";
                     const value = variants[type];
                     return (
-                      <Swatch value={value} isSwatch={isSwatch} small>
+                      <Swatch value={value} isSwatch={isSwatch} small key={idx}>
                         {!isSwatch && value}
                       </Swatch>
                     );
