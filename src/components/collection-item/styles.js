@@ -52,30 +52,46 @@ export const CardStyle = styled.div`
     font-size: 24px;
     line-height: 160%;
   }
+`;
 
-  .cart-icon {
-    width: 52px;
-    height: 52px;
-    position: absolute;
-    top: 320px;
-    right: 31px;
-    border-radius: 52px;
-    visibility: hidden;
-    background-color: #5ece7b;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.2s linear;
-    justify-content: center;
-    align-items: center;
+export const IconContainer = styled.div`
+  width: 52px;
+  height: 52px;
+  position: absolute;
+  top: 320px;
+  right: 31px;
+  border-radius: 52px;
+  visibility: hidden;
+  background-color: #5ece7b;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.2s linear, filter 0.2s linear;
+  justify-content: center;
+  align-items: center;
+  filter: drop-shadow(0px 0px 0px rgba(29, 31, 34, 0));
+  cursor: pointer;
+
+  &:hover {
     filter: drop-shadow(0px 4px 11px rgba(29, 31, 34, 0.1));
+  }
 
-    .icon {
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      height: 20px;
-      width: 100%;
-      color: white;
-    }
+  .icon {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 20px;
+    width: 100%;
+    color: white;
+  }
+`;
+
+export const Container = styled.div`
+  &:hover > ${IconContainer} {
+    ${({ inStock }) => inStock && `visibility: visible;`}
+    opacity: 1;
+  }
+
+  &:hover > ${CardStyle} {
+    box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
   }
 `;

@@ -6,7 +6,7 @@ export const filterPrice = (prices, currency, isPrice) => {
 
 export let normarlize = (item, variants) => {
   let { prices, name, brand, gallery, id } = item;
-  let cartId = id + " " + JSON.stringify(variants);
+  let cartId = id + "%" + JSON.stringify(variants);
 
   return {
     prices,
@@ -18,7 +18,7 @@ export let normarlize = (item, variants) => {
 };
 
 export let getVariants = (id) =>
-  JSON.parse(id.split(" ").filter((_, idx) => idx)[0]);
+  JSON.parse(id.split("%").filter((_, idx) => idx)[0]);
 
 export const getCartTotal = (cartItems, currency) =>
   cartItems.reduce(

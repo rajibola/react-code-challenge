@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { ReactComponent as CartIcon } from "../../assets/cart.svg";
 import { filterPrice, normarlize } from "../../utils/helpers";
-import { CardStyle } from "./styles";
+import { CardStyle, Container, IconContainer } from "./styles";
 
 class CollectionItem extends Component {
   addItemtoCart = () => {
@@ -20,20 +20,24 @@ class CollectionItem extends Component {
     const price = filterPrice(prices, this.props.currency);
 
     return (
-      // <Link to={category + "/" + id}>
-      <CardStyle
-        inStock={inStock}
-        onClick={() => this.props.history.push(category + "/" + id)}
-      >
-        <img src={gallery?.[0]} className="image" alt="product" />
-        <div className="cart-icon" onClick={() => this.addItemtoCart()}>
+      <Container style={{ position: "relative" }} inStock={inStock}>
+        <CardStyle
+          inStock={inStock}
+          onClick={() => this.props.history.push(category + "/" + id)}
+        >
+          <img src={gallery?.[0]} className="image" alt="product" />
+          <p className="name">{name}</p>
+          <h5 className="amount">{price}</h5>
+          {!inStock && <div className="out-of-stock">OUT OF STOCK</div>}
+        </CardStyle>
+        <IconContainer
+          className="cart-icon"
+          onClick={() => this.addItemtoCart()}
+          inStock={inStock}
+        >
           <CartIcon className="icon" fill="#fff" />
-        </div>
-        <p className="name">{name}</p>
-        <h5 className="amount">{price}</h5>
-        {!inStock && <div className="out-of-stock">OUT OF STOCK</div>}
-      </CardStyle>
-      // </Link>
+        </IconContainer>
+      </Container>
     );
   }
 }
