@@ -1,7 +1,7 @@
 import { Component } from "react";
-import { ReactComponent as Minus } from "../../assets/minus-square.svg";
-import { ReactComponent as Plus } from "../../assets/plus-square.svg";
-import { ReactComponent as ChevronLeft } from "../../assets/chevron-right.svg";
+import { ReactComponent as Minus } from "../../assets/svgs/minus-square.svg";
+import { ReactComponent as Plus } from "../../assets/svgs/plus-square.svg";
+import { ReactComponent as ChevronLeft } from "../../assets/svgs/chevron-right.svg";
 import { Swatch } from "../../styles";
 import { filterPrice, getVariants } from "../../utils/helpers";
 import { Container } from "./styles";

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import { ReactComponent as CartIcon } from "../../assets/cart.svg";
+import { ReactComponent as CartIcon } from "../../assets/svgs/cart.svg";
 import { filterPrice, normarlize } from "../../utils/helpers";
 import { CardStyle, Container, IconContainer } from "./styles";
 

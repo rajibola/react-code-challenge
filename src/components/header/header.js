@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 
-import { ReactComponent as Logo } from "../../assets/logo.svg";
+import { ReactComponent as Logo } from "../../assets/svgs/logo.svg";
 import CartDropdown from "../cart-dropdown";
 
 import { Container } from "./styles.js";

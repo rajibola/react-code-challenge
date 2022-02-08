@@ -1,6 +1,6 @@
 import { Component, createRef } from "react";
-import { ReactComponent as Minus } from "../../assets/minus-square.svg";
-import { ReactComponent as Plus } from "../../assets/plus-square.svg";
+import { ReactComponent as Minus } from "../../assets/svgs/minus-square.svg";
+import { ReactComponent as Plus } from "../../assets/svgs/plus-square.svg";
 import { Button, Swatch } from "../../styles";
 import { filterPrice, getCartTotal, getVariants } from "../../utils/helpers";
 import { Container } from "./styles";

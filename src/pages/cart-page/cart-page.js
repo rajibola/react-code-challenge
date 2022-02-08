@@ -1,6 +1,6 @@
 import { Component } from "react";
-import { CartList } from "../../components/cart-list";
 import { Container } from "./styles";
+import { CartList } from "../../components/cart-list";
 
 class CartPage extends Component {
   render() {

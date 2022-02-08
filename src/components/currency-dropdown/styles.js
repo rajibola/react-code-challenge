@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as DownArrow } from "../../assets/down-arrow.svg";
+import { ReactComponent as DownArrow } from "../../assets/svgs/down-arrow.svg";
 
 export const StyledDropDown = styled(DownArrow)`
   ${({ show }) => show && `transform: rotate(180deg);`}
