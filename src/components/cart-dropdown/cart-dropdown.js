@@ -1,10 +1,9 @@
 import { Component, createRef } from "react";
-import { Button, Swatch } from "../../styles";
-import { Container } from "./styles";
-import { ReactComponent as Plus } from "../../assets/plus-square.svg";
 import { ReactComponent as Minus } from "../../assets/minus-square.svg";
+import { ReactComponent as Plus } from "../../assets/plus-square.svg";
+import { Button, Swatch } from "../../styles";
 import { filterPrice, getCartTotal, getVariants } from "../../utils/helpers";
-import { Link } from "react-router-dom";
+import { Container } from "./styles";
 
 export default class CartDropdown extends Component {
   wrapperRef = createRef();
