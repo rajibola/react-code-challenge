@@ -41,7 +41,7 @@ export default class CartDropdown extends Component {
                 <p className="name">{name}</p>
                 <p className="price">{computedPrice}</p>
 
-                <div style={{ display: "flex", gap: "8px" }}>
+                <div className="optionsContainer">
                   {Object.keys(variants)?.map((type, idx) => {
                     const isSwatch = type === "Color";
                     const value = variants[type];

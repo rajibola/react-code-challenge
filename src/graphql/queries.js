@@ -80,6 +80,7 @@ export const GET_PRODUCT_BY_ID = gql`
       name
       brand
       category
+      inStock
       prices {
         amount
         currency {

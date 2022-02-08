@@ -28,6 +28,11 @@ export const Swatch = styled.div`
     min-width: 24px;
     height: 24px;
     font-size: 14px;
+    padding: 0 5px;
+    cursor: default;
+    border-color: #1d1f22;
+    color: #1d1f22;
+    border-color: #1d1f22;
   `}
 
   &:hover {
@@ -36,6 +41,7 @@ export const Swatch = styled.div`
       !isSelected &&
       `color: #a6a6a6;border-color: #a6a6a6;
     `}
+    ${({ small }) => small && `color: #1d1f22;border-color: #1d1f22;`}
   }
 `;
 

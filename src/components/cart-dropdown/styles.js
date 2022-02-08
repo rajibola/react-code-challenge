@@ -24,6 +24,9 @@ export const Container = styled.div`
 
     .left-container {
       width: 136px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
 
       .name,
       .brand {
@@ -35,6 +38,12 @@ export const Container = styled.div`
       .price {
         font-weight: 600 !important;
         margin-bottom: 27px;
+      }
+
+      .optionsContainer {
+        display: flex;
+        gap: 8px;
+        align-self: flex-start;
       }
     }
 

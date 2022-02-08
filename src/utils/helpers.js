@@ -21,9 +21,11 @@ export let getVariants = (id) =>
   JSON.parse(id.split("%").filter((_, idx) => idx)[0]);
 
 export const getCartTotal = (cartItems, currency) =>
-  cartItems.reduce(
-    (accumulatedQuantity, cartItem) =>
-      accumulatedQuantity +
-      cartItem.quantity * filterPrice(cartItem.prices, currency, true),
-    0
-  );
+  cartItems
+    .reduce(
+      (accumulatedQuantity, cartItem) =>
+        accumulatedQuantity +
+        cartItem.quantity * filterPrice(cartItem.prices, currency, true),
+      0
+    )
+    .toFixed(2);
