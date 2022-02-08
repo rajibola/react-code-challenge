@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const globalContainer = styled.div`
@@ -45,7 +46,7 @@ export const Swatch = styled.div`
   }
 `;
 
-export const Button = styled.div`
+export const Button = styled(Link)`
   height: 52px;
   background-color: #5ece7b;
   justify-content: center;
@@ -53,6 +54,24 @@ export const Button = styled.div`
   display: flex;
   color: #fff;
   font-weight: 600;
+  width: 100%;
+
+  ${({ small }) =>
+    small &&
+    `
+  height: 43px;
+  font-size: 14px;
+  `}
+
+  ${({ secondary }) =>
+    secondary &&
+    `
+  color: black;
+  background-color: transparent;
+  border: 1px solid black;
+  `}
+
+${({ disabled }) => disabled && `pointer-events: none; opacity: 0.7;`}
 `;
 
 export const Modal = styled.div`

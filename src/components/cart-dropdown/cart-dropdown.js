@@ -1,9 +1,10 @@
 import { Component, createRef } from "react";
-import { Swatch } from "../../styles";
+import { Button, Swatch } from "../../styles";
 import { Container } from "./styles";
 import { ReactComponent as Plus } from "../../assets/plus-square.svg";
 import { ReactComponent as Minus } from "../../assets/minus-square.svg";
 import { filterPrice, getCartTotal, getVariants } from "../../utils/helpers";
+import { Link } from "react-router-dom";
 
 export default class CartDropdown extends Component {
   wrapperRef = createRef();
@@ -85,6 +86,20 @@ export default class CartDropdown extends Component {
             {this.props.currency}
             {getCartTotal(cartItems, this.props.currency)}
           </p>
+        </div>
+
+        <div className="buttons">
+          <Button
+            small
+            secondary
+            to="/cart"
+            onClick={() => this.props.toggleCart()}
+          >
+            VIEW BAG
+          </Button>
+          <Button small disabled>
+            CHECK OUT
+          </Button>
         </div>
       </Container>
     );

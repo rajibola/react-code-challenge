@@ -27,6 +27,7 @@ export default class AddToCart extends Component {
   };
 
   addItemtoCart = () => {
+    if (!this.props.item.inStock) return;
     let selectedItem = normarlize(this.props.item, this.state.variants);
     return this.props.addItem(selectedItem);
   };
@@ -67,7 +68,7 @@ export default class AddToCart extends Component {
         <div className="price-tag">Price:</div>
         <div className="price">{price}</div>
 
-        <Button onClick={() => this.addItemtoCart()}>
+        <Button onClick={() => this.addItemtoCart()} disabled={!inStock}>
           {inStock ? "ADD TO CART" : "SOLD OUT"}
         </Button>
 

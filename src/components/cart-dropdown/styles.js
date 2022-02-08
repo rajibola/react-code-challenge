@@ -5,8 +5,15 @@ export const Container = styled.div`
   top: 80px;
   width: 325px;
   background-color: white;
-  padding: 8px 16px;
+  padding: 8px 16px 20px 16px;
   z-index: 1000;
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 35px;
+  }
 
   .total-section {
     display: flex;
