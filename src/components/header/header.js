@@ -25,7 +25,7 @@ class Header extends Component {
           {this.props?.categories?.map(({ name }, id) => {
             return (
               <NavLink
-                to={`/${name}`}
+                to={`/collection/${name}`}
                 className="option"
                 activeClassName="active"
                 key={id}

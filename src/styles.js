@@ -61,6 +61,7 @@ export const Modal = styled.div`
   background-color: rgba(57, 55, 72, 0.22);
   position: fixed;
   top: 0;
+  z-index: 10;
 
   ${({ isHidden }) => isHidden && "display: none;"}
 `;

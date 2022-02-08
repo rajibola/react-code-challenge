@@ -1,12 +1,12 @@
 import styled from "styled-components";
+import { globalContainer } from "../../styles";
 
-export const Container = styled.div`
-  position: absolute;
-  top: 80px;
-  width: 325px;
+export const Container = styled(globalContainer)`
   background-color: white;
-  padding: 8px 16px;
-  z-index: 1000;
+
+  h1 {
+    margin-bottom: 51px;
+  }
 
   .total-section {
     display: flex;
@@ -37,45 +37,44 @@ export const Container = styled.div`
   }
 
   .totalItemsContainer {
-    max-height: 315px;
-    overflow: hidden;
-    overflow-y: scroll;
-    ::-webkit-scrollbar {
-      display: none;
-    }
-
     display: flex;
     flex-direction: column;
-    gap: 41px;
+    /* gap: 41px; */
   }
 
   .list-container {
+    border-top: 1px solid #e5e5e5;
     display: flex;
     justify-content: space-between;
     /* margin-bottom: 41px; */
-    z-index: 100;
+    padding: 20px 0;
+    height: 225px;
 
     .left-container {
-      width: 136px;
+      /* width: 136px; */
       display: flex;
       flex-direction: column;
       justify-content: space-between;
 
-      .name,
+      .name {
+        font-size: 30px;
+        font-weight: 400;
+        margin-top: 16px;
+        line-height: 27px;
+        margin-bottom: 12px;
+      }
       .brand {
-        font-size: 16px;
-        font-weight: 300;
+        font-size: 30px;
+        font-weight: 600;
         margin-bottom: 5px;
-        line-height: 26px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        line-height: 27px;
       }
 
       .price {
-        font-weight: 600 !important;
-        /* margin-bottom: 27px; */
-        line-height: 25px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        line-height: 46px;
+        font-size: 24px;
       }
 
       .optionsContainer {
@@ -89,8 +88,7 @@ export const Container = styled.div`
       display: flex;
 
       .image {
-        width: 105px;
-        height: 137px;
+        width: 141px;
         object-fit: contain;
         object-position: center;
       }
@@ -105,10 +103,19 @@ export const Container = styled.div`
         .add,
         .remove {
           cursor: pointer;
+          width: 45px;
+          height: 45px;
+          stroke-width: 0.5;
 
           &:hover {
             opacity: 0.65;
           }
+        }
+
+        .quantity {
+          font-family: Raleway;
+          font-size: 24px;
+          line-height: 38.4px;
         }
       }
     }
