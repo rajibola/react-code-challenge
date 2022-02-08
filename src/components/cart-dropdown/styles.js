@@ -7,6 +7,25 @@ export const Container = styled.div`
   background-color: white;
   padding: 8px 16px;
 
+  .total-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 52px;
+
+    .total-text {
+      font-family: Roboto-Condensed;
+      font-weight: 500;
+      font-size: 16px;
+    }
+
+    .total-price {
+      font-family: Raleway;
+      font-weight: 700;
+      font-size: 16px;
+    }
+  }
+
   .header {
     margin-bottom: 23px;
     font-weight: 700;
@@ -16,10 +35,23 @@ export const Container = styled.div`
     }
   }
 
+  .totalItemsContainer {
+    max-height: 315px;
+    overflow: hidden;
+    overflow-y: scroll;
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    display: flex;
+    flex-direction: column;
+    gap: 41px;
+  }
+
   .list-container {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 41px;
+    /* margin-bottom: 41px; */
     z-index: 100;
 
     .left-container {
@@ -33,11 +65,16 @@ export const Container = styled.div`
         font-size: 16px;
         font-weight: 300;
         margin-bottom: 5px;
+        line-height: 26px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       .price {
         font-weight: 600 !important;
-        margin-bottom: 27px;
+        /* margin-bottom: 27px; */
+        line-height: 25px;
       }
 
       .optionsContainer {
