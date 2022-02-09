@@ -1,6 +1,7 @@
 # react-code-challenge
 
-An E-commerce web app built with ReactJs and GraphQL
+An E-commerce web app built with ReactJs and GraphQL 
+[https://ridwan-ecommerce.netlify.app/](https://ridwan-ecommerce.netlify.app/)
 
 ## Project Description
 
