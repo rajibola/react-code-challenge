@@ -28,16 +28,45 @@ $ yarn install
 2. Follow the instructions on the page to start terminal
 3. Open the project folder and run `yarn start`
 
-## Usage
+## `src` Folder Structure
 
-Pages:
-
-- Collection - product listing page
-  - route: `/collection/:collectionId`
-- Details - product description page
-  - route: `/collection/:collectionId/:productId`
-- Cart page - Cart list page
-  - route: `/cart`
+.
+├── App.js
+├── App.test.js
+├── assets
+│   ├── fonts
+│   └── svgs
+├── components
+│   ├── 404
+│   ├── add-to-cart
+│   ├── cart-dropdown
+│   ├── cart-icon
+│   ├── cart-list
+│   ├── collection-item
+│   ├── currency-dropdown
+│   ├── error
+│   ├── header
+│   └── modal
+├── graphql
+│   ├── cart.utils.js
+│   ├── initial-data.js
+│   ├── mutations.js
+│   ├── queries.js
+│   └── resolvers.js
+├── index.css
+├── index.js
+├── logo.svg
+├── navigation
+│   └── index.js
+├── pages
+│   ├── cart-page
+│   ├── collection
+│   └── details
+├── reportWebVitals.js
+├── setupTests.js
+├── styles.js
+└── utils
+└── helpers.js
 
 ## Problem Statements
 
