@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   position: relative;
+  cursor: pointer;
+
   .count {
     background-color: var(--text-black);
     color: var(--text-white);

@@ -30,9 +30,7 @@ export class Details extends Component {
             );
           })}
         </div>
-        <div>
-          <img src={currentImage} className="product-view" alt={currentImage} />
-        </div>
+        <img src={currentImage} className="product-view" alt={currentImage} />
         <AddToCart item={this.props.product} />
       </Container>
     );

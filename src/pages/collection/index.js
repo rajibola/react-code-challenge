@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Query } from "react-apollo";
+import Error from "../../components/error";
 import { GET_COLLECTION_BY_CATEGORY } from "../../graphql/queries";
 import CollectionPage from "./collection";
 
@@ -13,7 +14,7 @@ class CollectionPageContainer extends Component {
       >
         {({ data, loading, error }) => {
           if (loading) return <div>SPINNER</div>;
-          if (error) return <h2>Error: {error.message}</h2>;
+          if (error) return <Error message={error.message} />;
 
           return (
             data?.category.products && (
