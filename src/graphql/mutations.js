@@ -6,8 +6,6 @@ export const SET_CURRENCY = gql`
   }
 `;
 
-// --- Cart Related Mutations ---
-// Toggle isCartHidden (Boolean)
 export const TOGGLE_CART_HIDDEN = gql`
   mutation ToggleCartHidden {
     toggleCartHidden @client
