@@ -1,13 +1,14 @@
 import { Component } from "react";
-import { Button } from "../../styles";
-import { Container } from "./styles";
+// import {  } from "../../styles";
+import { Container, StyledButton } from "./styles";
 
 export default class Error404 extends Component {
   render() {
     return (
       <Container>
+        <p>404</p>
         <h1>This page does not exist</h1>
-        <Button to="/">GO HOME</Button>
+        <StyledButton to="/">GO HOME</StyledButton>
       </Container>
     );
   }

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Button } from "../../styles";
 
 export const Container = styled.div`
   width: 100%;
@@ -15,5 +16,10 @@ export const Container = styled.div`
 
   p {
     font-family: Roboto-Condensed;
+    font-size: 130px;
   }
+`;
+
+export const StyledButton = styled(Button)`
+  width: 120px;
 `;

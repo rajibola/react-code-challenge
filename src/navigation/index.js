@@ -20,6 +20,7 @@ export default class Navigation extends Component {
           component={CollectionPage}
         />
         <Route
+          exact
           path="/collection/:collectionId/:productId"
           component={Details}
         />
