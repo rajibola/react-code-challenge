@@ -71,7 +71,7 @@ export const Button = styled(Link)`
   border: 1px solid black;
   `}
 
-${({ disabled }) => disabled && `pointer-events: none; opacity: 0.7;`}
+${({ disabled }) => disabled && `cursor: not-allowed; opacity: 0.7;`}
 `;
 
 export const Modal = styled.div`
