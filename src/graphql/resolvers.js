@@ -30,7 +30,6 @@ export const typeDefs = gql`
 `;
 
 const updateCartItemsRelatedQueries = (cache, newCartItems) => {
-  // Calculate & cache new itemCount
   cache.writeQuery({
     query: GET_ITEM_COUNT,
     data: {
@@ -38,7 +37,6 @@ const updateCartItemsRelatedQueries = (cache, newCartItems) => {
     },
   });
 
-  // Update cartItems array in local cache => with newCartItems
   cache.writeQuery({
     query: GET_CART_ITEMS,
     data: {
@@ -99,10 +97,8 @@ export const resolvers = {
     },
 
     removeItemFromCart: (_root, { item }, { cache }) => {
-      // Get cartItems from local cache
       const { cartItems } = cache.readQuery({ query: GET_CART_ITEMS });
 
-      // Remove item from cart
       const newCartItems = removeItemFromCart(cartItems, item);
 
       updateCartItemsRelatedQueries(cache, newCartItems);
@@ -111,10 +107,8 @@ export const resolvers = {
     },
 
     clearItemFromCart: (_root, { item }, { cache }) => {
-      // Get cartItems from local cache
       const { cartItems } = cache.readQuery({ query: GET_CART_ITEMS });
 
-      // Remove item from cart
       const newCartItems = clearItemFromCart(cartItems, item);
 
       updateCartItemsRelatedQueries(cache, newCartItems);

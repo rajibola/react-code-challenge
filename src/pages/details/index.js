@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { Query } from "react-apollo";
 import Error from "../../components/error";
-// GraphQL Operations
+import Loading from "../../components/loading";
 import { GET_PRODUCT_BY_ID } from "../../graphql/queries";
 import { Details } from "./details";
 
@@ -14,7 +14,7 @@ export default class DetailsContainer extends Component {
         variables={{ id: match?.params?.productId }}
       >
         {({ data, loading, error }) => {
-          if (loading) return <div>SPINNER</div>;
+          if (loading) return <Loading />;
           if (error) return <Error message={error.message} />;
 
           return data?.product && <Details product={data?.product} />;

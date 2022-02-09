@@ -1,8 +1,5 @@
 import { gql } from "apollo-boost";
 
-// ----- Server-side Queries -----
-// --- Collection Related Queries ---
-// TYPE: Query, FIELD: collections
 export const GET_COLLECTIONS = gql`
   query {
     categories {
@@ -42,7 +39,6 @@ export const GET_CURRENCIES = gql`
   }
 `;
 
-// TYPE: Query, FIELD: getCollectionsByCategory, VARIABLES: title:String
 export const GET_COLLECTION_BY_CATEGORY = gql`
   query GetCollectionByCategory($title: String!) {
     category(input: { title: $title }) {
@@ -72,7 +68,6 @@ export const GET_COLLECTION_BY_CATEGORY = gql`
   }
 `;
 
-// TYPE: Query, FIELD: getCollectionsByCategory, VARIABLES: id:String
 export const GET_PRODUCT_BY_ID = gql`
   query GetProductById($id: String!) {
     product(id: $id) {
@@ -106,22 +101,19 @@ export const GET_CURRENCY = gql`
     currency @client
   }
 `;
-// --- Cart Related Queries ---
-// isCartHidden
+
 export const GET_CART_HIDDEN = gql`
   query {
     isCartHidden @client
   }
 `;
 
-// cartItems
 export const GET_CART_ITEMS = gql`
   query {
     cartItems @client
   }
 `;
 
-// itemCount
 export const GET_ITEM_COUNT = gql`
   query {
     itemCount @client
