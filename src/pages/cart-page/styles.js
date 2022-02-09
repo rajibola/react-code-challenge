@@ -39,5 +39,6 @@ export const Container = styled(globalContainer)`
   .totalItemsContainer {
     display: flex;
     flex-direction: column;
+    padding-right: 143px;
   }
 `;
