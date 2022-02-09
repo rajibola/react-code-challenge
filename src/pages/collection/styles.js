@@ -14,9 +14,6 @@ export const Container = styled(globalContainer)`
   }
 
   .products-container {
-    /* display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 103px 40px;

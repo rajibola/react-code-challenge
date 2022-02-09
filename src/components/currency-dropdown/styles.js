@@ -17,8 +17,6 @@ export const Container = styled.div`
 
 export const DropDown = styled.div`
   width: 114px;
-  /* height: 100px; */
-  /* border: 1px solid; */
   position: absolute;
   top: 65px;
   right: 78px;
@@ -27,7 +25,7 @@ export const DropDown = styled.div`
   gap: 20px;
   padding: 20px 0;
   filter: drop-shadow(0px 4px 35px rgba(168, 172, 176, 0.19));
-  background-color: white;
+  background-color: var(--text-white);
   cursor: pointer;
 
   ${({ show }) => !show && `display:none;`}

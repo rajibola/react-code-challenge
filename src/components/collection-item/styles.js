@@ -48,7 +48,7 @@ export const CardStyle = styled.div`
     cursor: auto;
     padding-top: 167px;
     text-align: center;
-    color: #8d8f9a;
+    color: var(--text-no-stock);
     font-size: 24px;
     line-height: 160%;
   }
@@ -62,7 +62,7 @@ export const IconContainer = styled.div`
   right: 31px;
   border-radius: 52px;
   visibility: hidden;
-  background-color: #5ece7b;
+  background-color: var(--text-green);
   opacity: 0;
   transition: visibility 0s, opacity 0.2s linear, filter 0.2s linear;
   justify-content: center;
@@ -81,7 +81,7 @@ export const IconContainer = styled.div`
     transform: translateY(-50%);
     height: 20px;
     width: 100%;
-    color: white;
+    color: var(--text-white);
   }
 `;
 

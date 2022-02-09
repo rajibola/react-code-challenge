@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { globalContainer } from "../../styles";
 
 export const Container = styled(globalContainer)`
-  background-color: white;
+  background-color: var(--text-white);
 
   h1 {
     margin-bottom: 51px;
@@ -39,6 +39,5 @@ export const Container = styled(globalContainer)`
   .totalItemsContainer {
     display: flex;
     flex-direction: column;
-    /* gap: 41px; */
   }
 `;

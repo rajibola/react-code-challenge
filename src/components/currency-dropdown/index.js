@@ -1,9 +1,9 @@
 import flowRight from "lodash.flowright";
 import { Component } from "react";
-import { GET_CURRENCIES, GET_CURRENCY } from "../../graphql/queries";
-import CurrencyDropdown from "./currency-dropdown";
 import { graphql } from "react-apollo";
 import { SET_CURRENCY } from "../../graphql/mutations";
+import { GET_CURRENCIES, GET_CURRENCY } from "../../graphql/queries";
+import CurrencyDropdown from "./currency-dropdown";
 
 class CurrencyDropdownContainer extends Component {
   render() {

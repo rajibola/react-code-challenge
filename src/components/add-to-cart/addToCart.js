@@ -4,12 +4,9 @@ import { filterPrice, normarlize } from "../../utils/helpers";
 import { Container } from "./styles";
 
 export default class AddToCart extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      variants: null,
-    };
-  }
+  state = {
+    variants: null,
+  };
 
   componentDidMount() {
     const { attributes } = this.props.item;

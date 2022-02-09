@@ -1,11 +1,7 @@
 import React, { Component } from "react";
 import { Query } from "react-apollo";
-
-import CollectionPage from "./collection";
-// import Spinner from '../../components/spinner/spinner.component';
-
-// GraphQL Operations
 import { GET_COLLECTION_BY_CATEGORY } from "../../graphql/queries";
+import CollectionPage from "./collection";
 
 class CollectionPageContainer extends Component {
   render() {

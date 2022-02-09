@@ -1,7 +1,6 @@
 import flowRight from "lodash.flowright";
 import React, { Component } from "react";
 import { graphql } from "react-apollo";
-// GraphQL Operations
 import { GET_CART_HIDDEN, GET_CATEGORIES } from "../../graphql/queries";
 import Header from "./header";
 

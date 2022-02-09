@@ -1,15 +1,15 @@
 import { gql } from "apollo-boost";
 import {
   addItemToCart,
-  removeItemFromCart,
   clearItemFromCart,
   getCartItemCount,
+  removeItemFromCart,
 } from "./cart.utils";
 import {
   GET_CART_HIDDEN,
-  GET_ITEM_COUNT,
   GET_CART_ITEMS,
   GET_CURRENCY,
+  GET_ITEM_COUNT,
 } from "./queries";
 
 export const typeDefs = gql`

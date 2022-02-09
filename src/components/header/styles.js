@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { COLORS } from "../../constants/colors";
 
 export const Container = styled.div`
   height: 80px;
@@ -11,7 +10,7 @@ export const Container = styled.div`
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: white;
+  background-color: var(--text-white);
 
   align-items: center;
 
@@ -41,13 +40,13 @@ export const Container = styled.div`
       text-transform: uppercase;
 
       &:hover {
-        color: ${COLORS.green};
+        color: var(--text-green);
       }
     }
 
     .active {
-      border-bottom: 2px solid ${COLORS.green};
-      color: ${COLORS.green};
+      border-bottom: 2px solid var(--text-green);
+      color: var(--text-green);
     }
   }
 

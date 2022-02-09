@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid var(--text-ash);
   display: flex;
   justify-content: space-between;
   /* margin-bottom: 41px; */

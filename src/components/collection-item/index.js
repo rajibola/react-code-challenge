@@ -1,9 +1,9 @@
 import flowRight from "lodash.flowright";
 import React, { Component } from "react";
-import { GET_CURRENCY } from "../../graphql/queries";
-import { ADD_ITEM_TO_CART } from "../../graphql/mutations";
-import CollectionItem from "./collection-item";
 import { graphql } from "react-apollo";
+import { ADD_ITEM_TO_CART } from "../../graphql/mutations";
+import { GET_CURRENCY } from "../../graphql/queries";
+import CollectionItem from "./collection-item";
 
 class CollectionItemContainer extends Component {
   render() {

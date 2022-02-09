@@ -2,8 +2,8 @@ import flowRight from "lodash.flowright";
 import { Component } from "react";
 import { graphql } from "react-apollo";
 import {
-  REMOVE_ITEM_FROM_CART,
   ADD_ITEM_TO_CART,
+  REMOVE_ITEM_FROM_CART,
   TOGGLE_CART_HIDDEN,
 } from "../../graphql/mutations";
 import { GET_ITEMS_CURRENCY } from "../../graphql/queries";

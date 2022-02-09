@@ -1,9 +1,9 @@
+import flowRight from "lodash.flowright";
 import { Component } from "react";
 import { graphql } from "react-apollo";
 import { ADD_ITEM_TO_CART, CLEAR_CART_ITEMS } from "../../graphql/mutations";
-import AddToCart from "./addToCart";
-import flowRight from "lodash.flowright";
 import { GET_CURRENCY } from "../../graphql/queries";
+import AddToCart from "./addToCart";
 
 class AddToCartContainer extends Component {
   render() {

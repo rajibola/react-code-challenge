@@ -11,9 +11,12 @@ body {
   padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+:root {
+  --text-black: #1d1f22;
+  --text-green: #5ece7b;
+  --text-white: #ffffff;
+  --text-ash: #e5e5e5;
+  --text-no-stock: #8d8f9a;
 }
 
 @font-face {
@@ -37,5 +40,5 @@ code {
 
 a {
   text-decoration: none;
-  color: black;
+  color: var(--text-black);
 }

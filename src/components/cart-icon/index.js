@@ -1,7 +1,6 @@
 import flowRight from "lodash.flowright";
 import { Component } from "react";
 import { graphql } from "react-apollo";
-// GraphQL Operations
 import { TOGGLE_CART_HIDDEN } from "../../graphql/mutations";
 import { GET_ITEM_COUNT } from "../../graphql/queries";
 import CartIcon from "./cart-icon";

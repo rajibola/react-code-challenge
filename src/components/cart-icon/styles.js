@@ -1,11 +1,10 @@
 import styled from "styled-components";
-import { COLORS } from "../../constants/colors";
 
 export const Container = styled.div`
   position: relative;
   .count {
-    background-color: ${COLORS.black};
-    color: white;
+    background-color: var(--text-black);
+    color: var(--text-white);
     font-size: 14px;
     line-height: 16.41px;
     font-weight: 700;

@@ -4,7 +4,7 @@ export const Container = styled.div`
   position: absolute;
   top: 80px;
   width: 325px;
-  background-color: white;
+  background-color: var(--text-white);
   padding: 8px 16px 20px 16px;
   z-index: 1000;
 
