@@ -6,6 +6,13 @@ An E-commerce web app built with ReactJs and GraphQL
 
 Fetch data from the GraphQL endpoint and provide an interface to view and interact with this data. You can find the endpoint [here](https://github.com/scandiweb/junior-react-endpoint), along with instructions on how to launch it.
 
+ <img src="./doc/collections.png" alt="User Details"  width="320" />
+ <img src="./doc/details-2.png" alt="User Details2"  width="320" />
+ <img src="./doc/details-1.png" alt="User Details2"  width="320" />
+<img src="./doc/cart-dropdown.png" alt="car-owners"  width="320" />
+<img src="./doc/cart-page.png" alt="Users"  width="320" />
+ <img src="./doc/currency-dropdown.png" alt="User Details2"  width="320" />
+
 ## Requirements
 
 - The solution should get implemented as per design, which is available at [this link](https://www.figma.com/file/MSyCAqVy1UgNap0pvqH6H3/Junior-Frontend-Test-Designs-Public?node-id=0%3A1).
