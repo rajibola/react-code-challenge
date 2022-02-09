@@ -30,6 +30,7 @@ $ yarn install
 
 ## `src` Folder Structure
 
+```
 .
 ├── App.js
 ├── App.test.js
@@ -67,6 +68,7 @@ $ yarn install
 ├── styles.js
 └── utils
 └── helpers.js
+```
 
 ## Problem Statements
 
