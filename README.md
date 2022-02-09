@@ -32,42 +32,31 @@ $ yarn install
 
 ```
 .
-├── App.js
-├── App.test.js
-├── assets
-│   ├── fonts
-│   └── svgs
-├── components
-│   ├── 404
-│   ├── add-to-cart
-│   ├── cart-dropdown
-│   ├── cart-icon
-│   ├── cart-list
-│   ├── collection-item
-│   ├── currency-dropdown
-│   ├── error
-│   ├── header
-│   └── modal
-├── graphql
-│   ├── cart.utils.js
-│   ├── initial-data.js
-│   ├── mutations.js
-│   ├── queries.js
-│   └── resolvers.js
-├── index.css
-├── index.js
-├── logo.svg
-├── navigation
-│   └── index.js
-├── pages
-│   ├── cart-page
-│   ├── collection
-│   └── details
-├── reportWebVitals.js
-├── setupTests.js
-├── styles.js
-└── utils
-└── helpers.js
+├── README.md
+├── package.json
+├── public
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── logo192.png
+│   ├── logo512.png
+│   ├── manifest.json
+│   └── robots.txt
+├── src
+│   ├── App.js
+│   ├── assets
+│   ├── components
+│   ├── graphql
+│   ├── index.css
+│   ├── index.js
+│   ├── navigation
+│   ├── pages
+│   ├── reportWebVitals.js
+│   ├── setupTests.js
+│   ├── styles.js
+│   └── utils
+└── yarn.lock
+
+8 directories, 15 files
 ```
 
 ## Problem Statements
