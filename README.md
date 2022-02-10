@@ -9,7 +9,7 @@ Fetch data from the GraphQL endpoint and provide an interface to view and intera
 
 ### Progressive Web App
 
-<img src="./doc/collections.png" alt="PWA"  width="400" />
+<img src="./doc/pwa.png" alt="PWA"  width="400" />
 
 Note: was built and rendered in Incognito Mode
 
