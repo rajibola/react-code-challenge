@@ -7,6 +7,14 @@ An E-commerce web app built with ReactJs and GraphQL
 
 Fetch data from the GraphQL endpoint and provide an interface to view and interact with this data. You can find the endpoint [here](https://github.com/scandiweb/junior-react-endpoint), along with instructions on how to launch it.
 
+### Progressive Web App
+
+<img src="./doc/collections.png" alt="PWA"  width="400" />
+
+Note: was built and rendered in Incognito Mode
+
+### Previews
+
 <span>
  <img src="./doc/collections.png" alt="User Details"  width="400" />
  <img src="./doc/details-2.png" alt="User Details2"  width="400" />
