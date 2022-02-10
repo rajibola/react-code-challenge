@@ -23,12 +23,14 @@ body {
   font-family: "Raleway";
   src: local("Raleway"),
     url("./assets/fonts/Raleway/Raleway-Regular.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Roboto-Condensed";
   src: local("Roboto-Condensed"),
     url("./assets/fonts/Roboto/RobotoCondensed-Regular.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
@@ -36,6 +38,7 @@ body {
   src: local("SourceSansPro"),
     url("./assets/fonts/SourceSansPro/SourceSansPro-Regular.ttf")
       format("truetype");
+  font-display: swap;
 }
 
 a {

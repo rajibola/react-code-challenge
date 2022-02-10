@@ -27,7 +27,7 @@ class CollectionItem extends Component {
         >
           <img src={gallery?.[0]} className="image" alt="product" />
           <p className="name">{name}</p>
-          <h5 className="amount">{price}</h5>
+          <p className="amount">{price}</p>
           {!inStock && <div className="out-of-stock">OUT OF STOCK</div>}
         </CardStyle>
         <IconContainer

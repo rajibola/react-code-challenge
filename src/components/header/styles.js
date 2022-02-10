@@ -47,6 +47,8 @@ export const Container = styled.div`
     .active {
       border-bottom: 2px solid var(--text-green);
       color: var(--text-green);
+      font-weight: 600;
+      font-family: Raleway;
     }
   }
 
