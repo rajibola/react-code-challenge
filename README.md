@@ -1,6 +1,6 @@
 # react-code-challenge
 
-An E-commerce web app built with ReactJs and GraphQL 
+An E-commerce web app built with ReactJs and GraphQL
 [https://ridwan-ecommerce.netlify.app/](https://ridwan-ecommerce.netlify.app/)
 
 ## Project Description
@@ -15,7 +15,6 @@ Fetch data from the GraphQL endpoint and provide an interface to view and intera
 <img src="./doc/cart-page.png" alt="Users"  width="400" />
  <img src="./doc/currency-dropdown.png" alt="User Details2"  width="400" />
 </span>
-
 
 ## Requirements
 
@@ -43,31 +42,43 @@ $ yarn install
 
 ```
 .
-├── README.md
-├── package.json
-├── public
-│   ├── favicon.ico
-│   ├── index.html
-│   ├── logo192.png
-│   ├── logo512.png
-│   ├── manifest.json
-│   └── robots.txt
-├── src
-│   ├── App.js
-│   ├── assets
-│   ├── components
-│   ├── graphql
-│   ├── index.css
-│   ├── index.js
-│   ├── navigation
-│   ├── pages
-│   ├── reportWebVitals.js
-│   ├── setupTests.js
-│   ├── styles.js
-│   └── utils
-└── yarn.lock
+├── App.js
+├── assets
+│   ├── fonts
+│   └── svgs
+├── components
+│   ├── 404
+│   ├── add-to-cart
+│   ├── cart-dropdown
+│   ├── cart-icon
+│   ├── cart-list
+│   ├── collection-item
+│   ├── currency-dropdown
+│   ├── error
+│   ├── header
+│   ├── loading
+│   └── modal
+├── graphql
+│   ├── cart.utils.js
+│   ├── initial-data.js
+│   ├── mutations.js
+│   ├── queries.js
+│   └── resolvers.js
+├── index.css
+├── index.js
+├── navigation
+│   └── index.js
+├── pages
+│   ├── cart-page
+│   ├── collection
+│   └── details
+├── reportWebVitals.js
+├── setupTests.js
+├── styles.js
+└── utils
+    └── helpers.js
 
-8 directories, 15 files
+22 directories, 13 files
 ```
 
 ## Problem Statements
