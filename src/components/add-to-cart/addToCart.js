@@ -2,6 +2,7 @@ import { Component } from "react";
 import { Button, Swatch } from "../../styles";
 import { filterPrice, normarlize } from "../../utils/helpers";
 import { Container } from "./styles";
+import parse from "html-react-parser";
 
 export default class AddToCart extends Component {
   state = {
@@ -32,6 +33,7 @@ export default class AddToCart extends Component {
   render() {
     const { brand, name, attributes, prices, description, inStock } =
       this.props.item;
+
     const price = filterPrice(prices, this.props.currency);
     return (
       <Container>
@@ -69,12 +71,7 @@ export default class AddToCart extends Component {
           {inStock ? "ADD TO CART" : "SOLD OUT"}
         </Button>
 
-        <div
-          className="description"
-          dangerouslySetInnerHTML={{
-            __html: description.replace(/\n/g, "<br />"),
-          }}
-        />
+        <div className="description">{parse(description)}</div>
       </Container>
     );
   }

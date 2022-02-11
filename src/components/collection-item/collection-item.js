@@ -18,7 +18,6 @@ class CollectionItem extends Component {
   render() {
     const { inStock, prices, gallery, name, category, id, brand } =
       this.props.data;
-    console.log("PRORP", this.props.data);
     const price = filterPrice(prices, this.props.currency);
 
     return (
