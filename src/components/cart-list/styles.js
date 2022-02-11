@@ -6,7 +6,7 @@ export const Container = styled.div`
   justify-content: space-between;
   /* margin-bottom: 41px; */
   padding: 20px 0;
-  height: 225px;
+  min-height: 225px;
 
   .left-container {
     /* width: 136px; */
@@ -37,8 +37,22 @@ export const Container = styled.div`
 
     .optionsContainer {
       display: flex;
+      flex-direction: column;
       gap: 8px;
       align-self: flex-start;
+      gap: 10px;
+
+      .type-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        p {
+          font-size: 20px;
+          margin-right: 10px;
+          font-family: "Roboto-Condensed";
+        }
+      }
     }
   }
 
@@ -47,7 +61,6 @@ export const Container = styled.div`
 
     .image-container {
       display: flex;
-      /* justify-content: space-between; */
       align-items: center;
       position: relative;
       .image {
@@ -60,6 +73,7 @@ export const Container = styled.div`
       .chevron-right,
       .chevron-left {
         position: absolute;
+        cursor: pointer;
       }
 
       .chevron-right {

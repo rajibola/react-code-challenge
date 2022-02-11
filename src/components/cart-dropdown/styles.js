@@ -63,7 +63,7 @@ export const Container = styled.div`
     z-index: 100;
 
     .left-container {
-      width: 136px;
+      max-width: 136px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -81,14 +81,29 @@ export const Container = styled.div`
 
       .price {
         font-weight: 600 !important;
-        /* margin-bottom: 27px; */
+        margin-bottom: 10px;
         line-height: 25px;
       }
 
       .optionsContainer {
         display: flex;
-        gap: 8px;
-        align-self: flex-start;
+        flex-direction: column;
+        gap: 10px 0;
+
+        div {
+          display: flex;
+          gap: 8px;
+          flex-wrap: wrap;
+          align-items: center;
+          p {
+            font-size: 12px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 65px;
+            /* min-width: min-content; */
+          }
+        }
       }
     }
 
@@ -108,6 +123,7 @@ export const Container = styled.div`
         justify-content: space-between;
         align-items: center;
         margin-right: 10px;
+        height: 137px;
 
         .add,
         .remove {

@@ -44,9 +44,12 @@ export class CartList extends Component {
               const isSwatch = type === "Color";
               const value = variants[type];
               return (
-                <Swatch value={value} isSwatch={isSwatch} key={idx}>
-                  {!isSwatch && value}
-                </Swatch>
+                <div className="type-container">
+                  <p>{type}:</p>
+                  <Swatch value={value} isSwatch={isSwatch} key={idx}>
+                    {!isSwatch && value}
+                  </Swatch>
+                </div>
               );
             })}
           </div>

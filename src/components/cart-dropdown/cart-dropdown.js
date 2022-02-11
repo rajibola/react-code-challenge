@@ -50,14 +50,17 @@ export default class CartDropdown extends Component {
                       const isSwatch = type === "Color";
                       const value = variants[type];
                       return (
-                        <Swatch
-                          value={value}
-                          isSwatch={isSwatch}
-                          small
-                          key={idx}
-                        >
-                          {!isSwatch && value}
-                        </Swatch>
+                        <div>
+                          <p>{type}:</p>
+                          <Swatch
+                            value={value}
+                            isSwatch={isSwatch}
+                            small
+                            key={idx}
+                          >
+                            {!isSwatch && value}
+                          </Swatch>
+                        </div>
                       );
                     })}
                   </div>
