@@ -64,7 +64,7 @@ export class CartList extends Component {
               className="remove"
             />
           </div>
-          <div style={{ position: "relative" }} className="image-container">
+          <div className="image-container">
             {this.state.totalImage > 0 && (
               <ChevronLeft className="chevron-left" onClick={this.onPrev} />
             )}
