@@ -16,17 +16,21 @@ class CollectionItem extends Component {
   };
 
   render() {
-    const { inStock, prices, gallery, name, category, id } = this.props.data;
+    const { inStock, prices, gallery, name, category, id, brand } =
+      this.props.data;
+    console.log("PRORP", this.props.data);
     const price = filterPrice(prices, this.props.currency);
 
     return (
-      <Container style={{ position: "relative" }} inStock={inStock}>
+      <Container inStock={inStock}>
         <CardStyle
           inStock={inStock}
           onClick={() => this.props.history.push(category + "/" + id)}
         >
           <img src={gallery?.[0]} className="image" alt="product" />
-          <p className="name">{name}</p>
+          <p className="name">
+            {brand} {name}
+          </p>
           <p className="amount">{price}</p>
           {!inStock && <div className="out-of-stock">OUT OF STOCK</div>}
         </CardStyle>

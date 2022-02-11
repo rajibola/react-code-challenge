@@ -86,6 +86,9 @@ export const IconContainer = styled.div`
 `;
 
 export const Container = styled.div`
+  position: relative;
+  width: min-content;
+  height: min-content;
   &:hover > ${IconContainer} {
     ${({ inStock }) => inStock && `visibility: visible;`}
     opacity: 1;
